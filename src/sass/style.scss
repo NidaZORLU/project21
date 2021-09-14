@@ -1,0 +1,62 @@
+* {
+  box-sizing: border-box;
+}
+//Mixins
+@mixin transitionEffect($par){
+  transition: $par all;
+  -webkit-transition: $par all;
+  -moz-transition: $par all;
+  -o-transition: $par all;
+}
+@mixin centerFlex{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+//color
+$bg-color-1 :steelblue;
+$bg-color-2: black;
+$bg-color-3: white;
+$bg-color-4: #333;
+$bg-color-5:#ccc;
+
+body {
+  background-color: $bg-color-1;
+  @include centerFlex;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.empty {
+  height: 150px;
+  width: 150px;
+  margin: 10px;
+  border: solid 3px $bg-color-2;
+  background: $bg-color-3;
+}
+
+.fill {
+  background-image: url('https://source.unsplash.com/random/150x150');
+  height: 145px;
+  width: 145px;
+  cursor: pointer;
+}
+
+.hold {
+  border: solid 5px $bg-color-5;
+}
+
+.hovered {
+  background-color: $bg-color-4;
+  border-color: $bg-color-3;
+  border-style: dashed;
+}
+
+@media (max-width: 800px) {
+  body {
+    flex-direction: column;
+  }
+}
